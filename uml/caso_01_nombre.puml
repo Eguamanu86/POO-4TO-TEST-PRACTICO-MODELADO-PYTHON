@@ -1,0 +1,24 @@
+@startuml
+
+' Relación de ejemplo entre entidades
+' - asociación: --
+' - agregación: o--
+' - composición: *--
+' - herencia/generalización: <|--
+
+class Persona {
+  - nombre: str
+}
+
+class Estudiante {
+  - matricula: str
+  + calcular_promedio(): float
+}
+
+class Asignatura {
+}
+
+Estudiante "1" -- "*" Asignatura : cursa
+Persona <|-- Estudiante
+
+@enduml
